@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0bcb163eb96f263ff8e0f972fe4ea4c7",
+    "content-hash": "bcdc93ca6c6f39a0edce2a22898143aa",
     "packages": [
         {
             "name": "brick/math",
@@ -1049,6 +1049,67 @@
                 }
             ],
             "time": "2023-12-03T19:50:20+00:00"
+        },
+        {
+            "name": "kodeine/laravel-meta",
+            "version": "2.2.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kodeine/laravel-meta.git",
+                "reference": "e700ad4ee0ba2390daaecc30c9e4d0cbf6e45e17"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kodeine/laravel-meta/zipball/e700ad4ee0ba2390daaecc30c9e4d0cbf6e45e17",
+                "reference": "e700ad4ee0ba2390daaecc30c9e4d0cbf6e45e17",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "illuminate/database": "^8.0|^9.0|^10.0|^11.0",
+                "illuminate/events": "^8.0|^9.0|^10.0|^11.0",
+                "illuminate/support": "^8.0|^9.0|^10.0|^11.0",
+                "php": ">=7.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^9.5|^10.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Kodeine\\Metable\\": "src/"
+                },
+                "classmap": []
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ahsen M.",
+                    "homepage": "https://github.com/kodeine",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Fluent Meta Data for Eloquent Models, as if it is a property on your model.",
+            "keywords": [
+                "data",
+                "eloquent",
+                "kodeine",
+                "laravel",
+                "meta",
+                "meta data",
+                "metable",
+                "metadata",
+                "metas",
+                "model"
+            ],
+            "support": {
+                "issues": "https://github.com/kodeine/laravel-meta/issues",
+                "source": "https://github.com/kodeine/laravel-meta/tree/2.2.3"
+            },
+            "time": "2024-03-13T15:19:09+00:00"
         },
         {
             "name": "laravel/framework",
