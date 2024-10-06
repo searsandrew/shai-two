@@ -9,28 +9,65 @@
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+        <link href="https://fonts.bunny.net/css?family=inter:400,500,600&display=swap" rel="stylesheet" />
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+        @fluxStyles
     </head>
-    <body class="font-sans antialiased">
-        <div class="min-h-screen bg-gray-100">
-            <livewire:layout.navigation />
+    <body class="min-h-screen bg-white">
+        <flux:header container class="bg-zinc-50 dark:bg-zinc-900 border-b border-zinc-200">
+            <flux:sidebar.toggle class="lg:hidden" icon="bars-2" inset="left" />
 
-            <!-- Page Heading -->
-            @if (isset($header))
-                <header class="bg-white shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                        {{ $header }}
-                    </div>
-                </header>
-            @endif
+            <flux:brand href="/" logo="{{ Storage::url('resources/logo.svg')  }}" name="{{ __('Shai Donation Platform') }}" class="max-lg:hidden" />
 
-            <!-- Page Content -->
-            <main>
-                {{ $slot }}
-            </main>
-        </div>
+            <flux:navbar class="-mb-px max-lg:hidden">
+                <flux:navbar.item href="#" current>{{ __('Campaigns') }}</flux:navbar.item>
+            </flux:navbar>
+
+            <flux:spacer />
+
+            <flux:navbar class="mr-4">
+                <flux:navbar.item icon="magnifying-glass" href="#" label="Search" />
+                <flux:navbar.item class="max-lg:hidden" icon="cog-6-tooth" href="#" label="Settings" />
+                <flux:navbar.item class="max-lg:hidden" icon="information-circle" href="#" label="Help" />
+            </flux:navbar>
+
+            <flux:dropdown position="top" align="start">
+                <flux:profile avatar="https://fluxui.dev/img/demo/user.png" />
+
+                <flux:menu>
+                    <flux:menu.radio.group>
+                        <flux:menu.radio checked>Olivia Martin</flux:menu.radio>
+                        <flux:menu.radio>Truly Delta</flux:menu.radio>
+                    </flux:menu.radio.group>
+
+                    <flux:menu.separator />
+
+                    <flux:menu.item icon="arrow-right-start-on-rectangle">Logout</flux:menu.item>
+                </flux:menu>
+            </flux:dropdown>
+        </flux:header>
+
+        <flux:sidebar stashable sticky class="lg:hidden bg-zinc-50 border-r border-zinc-200">
+            <flux:sidebar.toggle class="lg:hidden" icon="x-mark" />
+
+            <flux:brand href="#" logo="https://fluxui.dev/img/demo/logo.png" name="Acme Inc." class="px-2" />
+
+            <flux:navlist variant="outline">
+                <flux:navlist.item icon="home" href="#" current>Home</flux:navlist.item>
+            </flux:navlist>
+            <flux:spacer />
+
+            <flux:navlist variant="outline">
+                <flux:navlist.item icon="cog-6-tooth" href="#">Settings</flux:navlist.item>
+                <flux:navlist.item icon="information-circle" href="#">Help</flux:navlist.item>
+            </flux:navlist>
+        </flux:sidebar>
+
+        <flux:main container>
+            {{ $slot }}
+        </flux:main>
+        @fluxScripts
     </body>
 </html>
